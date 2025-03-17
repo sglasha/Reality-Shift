@@ -1,5 +1,5 @@
 # Reality Shift
-## Gameplay
+### Gameplay
 ### All Levels:
  - 3 Lives
  - Checkpoints
