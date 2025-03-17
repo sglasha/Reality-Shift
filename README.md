@@ -1,4 +1,5 @@
 # Reality Shift
+Reality Shift is a short game for a game jam using the theme Parallel Worlds and will be made in Godot 4.3.
 ## Gameplay
 ### All Levels:
  - 3 Lives
