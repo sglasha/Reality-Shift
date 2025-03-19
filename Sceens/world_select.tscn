@@ -1,0 +1,92 @@
+[gd_scene load_steps=17 format=3 uid="uid://c6ravuhhd14gy"]
+
+[ext_resource type="Texture2D" uid="uid://dqm6x1kjd2tmq" path="res://Reality-Shift/Assets/WorldSelectionScreen/WSSBG.png" id="1_7yw2u"]
+[ext_resource type="Texture2D" uid="uid://dxvosufr6h1i7" path="res://Reality-Shift/Assets/WorldSelectionScreen/WorldGlow/WSSGlow1.png" id="2_28l66"]
+[ext_resource type="Texture2D" uid="uid://cynj1bt02m18u" path="res://Reality-Shift/Assets/WorldSelectionScreen/WSSWorlds.png" id="2_lxny3"]
+[ext_resource type="Texture2D" uid="uid://uuxolxy853ql" path="res://Reality-Shift/Assets/WorldSelectionScreen/WorldGlow/WSSGlow2.png" id="3_1oybu"]
+[ext_resource type="Texture2D" uid="uid://cxd87bd1ats0f" path="res://Reality-Shift/Assets/WorldSelectionScreen/Worlds/WSSWorld1.png" id="3_p5rjk"]
+[ext_resource type="Texture2D" uid="uid://bmtrc1uwlx6uy" path="res://Reality-Shift/Assets/WorldSelectionScreen/WorldGlow/WSSGlow3.png" id="4_g5n7f"]
+[ext_resource type="Texture2D" uid="uid://ba3sak6rqh6ms" path="res://Reality-Shift/Assets/WorldSelectionScreen/Worlds/WSSWorld2.png" id="4_xk3uh"]
+[ext_resource type="Texture2D" uid="uid://sritgbhey7e8" path="res://Reality-Shift/Assets/WorldSelectionScreen/Worlds/WSSWorld3.png" id="5_a7ol7"]
+[ext_resource type="Texture2D" uid="uid://csgblmmarypsq" path="res://Reality-Shift/Assets/WorldSelectionScreen/WorldGlow/WSSGlow4.png" id="5_duhbi"]
+[ext_resource type="Texture2D" uid="uid://c8xilx0beymus" path="res://Reality-Shift/Assets/WorldSelectionScreen/WorldGlow/WSSGlow5.png" id="6_dimfq"]
+[ext_resource type="Texture2D" uid="uid://dn701frn6k7ry" path="res://Reality-Shift/Assets/WorldSelectionScreen/Worlds/WSSWorld4.png" id="6_kp4dv"]
+[ext_resource type="Texture2D" uid="uid://dmjk4au3h23kq" path="res://Reality-Shift/Assets/WorldSelectionScreen/WorldGlow/WSSGlow6.png" id="7_2k13x"]
+[ext_resource type="Texture2D" uid="uid://bi7pgi0w3rhko" path="res://Reality-Shift/Assets/WorldSelectionScreen/Worlds/WSSWorld5.png" id="7_8di51"]
+[ext_resource type="Texture2D" uid="uid://b7g22ft14khqk" path="res://Reality-Shift/Assets/WorldSelectionScreen/Worlds/WSSWorld6.png" id="8_6ck1j"]
+[ext_resource type="Texture2D" uid="uid://bytbr1nlsw7g0" path="res://Reality-Shift/Assets/WorldSelectionScreen/WorldGlow/WSSGlow7.png" id="8_pwe4v"]
+[ext_resource type="Texture2D" uid="uid://051bo1ke5xck" path="res://Reality-Shift/Assets/WorldSelectionScreen/Worlds/WSSWorld7.png" id="9_seia6"]
+
+[node name="WorldSelect" type="Node2D"]
+
+[node name="WSBG" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_7yw2u")
+
+[node name="Glow" type="Node2D" parent="."]
+visible = false
+
+[node name="WSGlow1" type="Sprite2D" parent="Glow"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_28l66")
+
+[node name="WSGlow2" type="Sprite2D" parent="Glow"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_1oybu")
+
+[node name="WSGlow3" type="Sprite2D" parent="Glow"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_g5n7f")
+
+[node name="WSGlow4" type="Sprite2D" parent="Glow"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_duhbi")
+
+[node name="WSGlow5" type="Sprite2D" parent="Glow"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_dimfq")
+
+[node name="WSGlow6" type="Sprite2D" parent="Glow"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_2k13x")
+
+[node name="WSGlow7" type="Sprite2D" parent="Glow"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_pwe4v")
+
+[node name="WSWorlds" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_lxny3")
+
+[node name="WorldSelections" type="Node2D" parent="."]
+visible = false
+
+[node name="WSWorld1" type="Sprite2D" parent="WorldSelections"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_p5rjk")
+
+[node name="WSWorld2" type="Sprite2D" parent="WorldSelections"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_xk3uh")
+
+[node name="WSWorld3" type="Sprite2D" parent="WorldSelections"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_a7ol7")
+
+[node name="WSWorld4" type="Sprite2D" parent="WorldSelections"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_kp4dv")
+
+[node name="WSWorld5" type="Sprite2D" parent="WorldSelections"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_8di51")
+
+[node name="WSWorld6" type="Sprite2D" parent="WorldSelections"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_6ck1j")
+
+[node name="WSWorld7" type="Sprite2D" parent="WorldSelections"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("9_seia6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
