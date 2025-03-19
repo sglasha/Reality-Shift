@@ -67,39 +67,33 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_lxny3")
 
 [node name="WorldSelections" type="Node2D" parent="."]
+visible = false
 
 [node name="WSWorld1" type="Sprite2D" parent="WorldSelections"]
-visible = false
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_p5rjk")
 
 [node name="WSWorld2" type="Sprite2D" parent="WorldSelections"]
-visible = false
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_xk3uh")
 
 [node name="WSWorld3" type="Sprite2D" parent="WorldSelections"]
-visible = false
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("5_a7ol7")
 
 [node name="WSWorld4" type="Sprite2D" parent="WorldSelections"]
-visible = false
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("6_kp4dv")
 
 [node name="WSWorld5" type="Sprite2D" parent="WorldSelections"]
-visible = false
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("7_8di51")
 
 [node name="WSWorld6" type="Sprite2D" parent="WorldSelections"]
-visible = false
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("8_6ck1j")
 
 [node name="WSWorld7" type="Sprite2D" parent="WorldSelections"]
-visible = false
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("9_seia6")
 
