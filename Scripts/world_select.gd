@@ -38,17 +38,22 @@ func _process(delta: float) -> void:
 		else:
 			world = 6
 		setWorld(world)
+	
 	if Input.is_action_just_pressed("left") or Input.is_action_just_pressed("up"):
 		if world != 7 and one and two and three and four and five and six:
 			world += 1
 		elif world != 6:
-			world += 1
+			if world != 7:
+				world += 1
+			else:
+				world = 1
 		else:
 			world = 1
 		setWorld(world)
+	
 	if Input.is_action_just_pressed("select"):
 		if world == 1:
-			$WorldSelections/WSWorld1.show()
+			get_tree().change_scene_to_file("res://Reality-Shift/Sceens/world_1.tscn")
 		if world == 2:
 			$WorldSelections/WSWorld2.show()
 		if world == 3:
@@ -62,6 +67,7 @@ func _process(delta: float) -> void:
 		if world == 7:
 			$WorldSelections/WSWorld7.show()
 
+# Sets Highlight Image to show while the rest get hidden
 func setWorld(new :int):
 	$WorldSelections/WSWorld1.hide()
 	$WorldSelections/WSWorld2.hide()
