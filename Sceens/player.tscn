@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci8k8x1kw315n"]
+
+[ext_resource type="Script" path="res://Reality-Shift/Scripts/player.gd" id="1_jo2ct"]
+[ext_resource type="Texture2D" uid="uid://dnt58c5j2ldh6" path="res://icon.svg" id="1_miosw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u5kal"]
+radius = 61.0737
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_jo2ct")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -65)
+texture = ExtResource("1_miosw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -65)
+shape = SubResource("CircleShape2D_u5kal")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(60, -85)
+position_smoothing_enabled = true

@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://c8a4nr16y4yqe"]
+[gd_scene load_steps=3 format=3 uid="uid://c8a4nr16y4yqe"]
+
+[ext_resource type="PackedScene" uid="uid://ci8k8x1kw315n" path="res://Reality-Shift/Sceens/player.tscn" id="1_5aw6t"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qwxex"]
 
 [node name="World1" type="Node2D"]
+position = Vector2(108, -80)
+
+[node name="Player" parent="." instance=ExtResource("1_5aw6t")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_qwxex")
