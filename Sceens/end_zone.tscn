@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2pic1i6b3or3"]
+
+[ext_resource type="Script" path="res://Reality-Shift/Scripts/endZone.gd" id="1_dxsan"]
+
+[node name="endZone" type="Area2D"]
+script = ExtResource("1_dxsan")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

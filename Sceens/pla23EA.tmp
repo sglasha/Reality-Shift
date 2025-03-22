@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://ci8k8x1kw315n"]
+
+[ext_resource type="Script" path="res://Reality-Shift/Scripts/StateMachine/player.gd" id="1_jo2ct"]
+[ext_resource type="Texture2D" uid="uid://dnt58c5j2ldh6" path="res://icon.svg" id="1_miosw"]
+[ext_resource type="Script" path="res://Reality-Shift/Scripts/StateMachine/idle_state.gd" id="3_twwlc"]
+[ext_resource type="Script" path="res://Reality-Shift/Scripts/StateMachine/moving_state.gd" id="4_wnhb2"]
+[ext_resource type="Script" path="res://Reality-Shift/Scripts/StateMachine/swimming_state.gd" id="5_kil6m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u5kal"]
+radius = 61.0737
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_jo2ct")
+
+[node name="playerSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -65)
+texture = ExtResource("1_miosw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -65)
+shape = SubResource("CircleShape2D_u5kal")
+
+[node name="IdleState" type="Node" parent="."]
+script = ExtResource("3_twwlc")
+
+[node name="MovingState" type="Node" parent="."]
+script = ExtResource("4_wnhb2")
+
+[node name="SwimmingState" type="Node" parent="."]
+script = ExtResource("5_kil6m")
+
+[node name="JumpingState" type="Node" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(60, -85)
+position_smoothing_enabled = true

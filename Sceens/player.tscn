@@ -7,9 +7,12 @@
 radius = 61.0737
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_jo2ct")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="playerSprite" type="Sprite2D" parent="."]
 position = Vector2(0, -65)
 texture = ExtResource("1_miosw")
 
@@ -20,3 +23,8 @@ shape = SubResource("CircleShape2D_u5kal")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(60, -85)
 position_smoothing_enabled = true
+
+[node name="CoyoteTime" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.15
+one_shot = true

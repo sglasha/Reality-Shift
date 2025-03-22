@@ -1,70 +1,61 @@
 extends Node2D
 
-var world = 1
-var one = false
-var two = false
-var three = false
-var four = false
-var five = false
-var six = false
-var seven = false
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if one:
+	if Global.one:
 		$Glow/WSGlow1.show()
-	if two:
+	if Global.two:
 		$Glow/WSGlow2.show()
-	if three:
+	if Global.three:
 		$Glow/WSGlow3.show()
-	if four:
+	if Global.four:
 		$Glow/WSGlow4.show()
-	if five:
+	if Global.five:
 		$Glow/WSGlow5.show()
-	if six:
+	if Global.six:
 		$Glow/WSGlow6.show()
-	if seven:
+	if Global.seven:
 		$Glow/WSGlow7.show()
 		
-	setWorld(world)
+	setWorld(Global.world)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("right") or Input.is_action_just_pressed("down"):
-		if world != 1:
-			world -= 1
-		elif one and two and three and four and five and six:
-			world = 7
+		if Global.world != 1:
+			Global.world -= 1
+		elif Global.one and Global.two and Global.three and Global.four and Global.five and Global.six:
+			Global.world = 7
 		else:
-			world = 6
-		setWorld(world)
+			Global.world = 6
+		setWorld(Global.world)
 	
 	if Input.is_action_just_pressed("left") or Input.is_action_just_pressed("up"):
-		if world != 7 and one and two and three and four and five and six:
-			world += 1
-		elif world != 6:
-			if world != 7:
-				world += 1
+		if Global.world != 7 and Global.one and Global.two and Global.three and Global.four and Global.five and Global.six:
+			Global.world += 1
+		elif Global.world != 6:
+			if Global.world != 7:
+				Global.world += 1
 			else:
-				world = 1
+				Global.world = 1
 		else:
-			world = 1
-		setWorld(world)
+			Global.world = 1
+		setWorld(Global.world)
 	
 	if Input.is_action_just_pressed("select"):
-		if world == 1:
+		if Global.world == 1:
 			get_tree().change_scene_to_file("res://Reality-Shift/Sceens/world_1.tscn")
-		if world == 2:
-			$WorldSelections/WSWorld2.show()
-		if world == 3:
+		if Global.world == 2:
+			get_tree().change_scene_to_file("res://Reality-Shift/Sceens/world_2.tscn")
+		if Global.world == 3:
 			$WorldSelections/WSWorld3.show()
-		if world == 4:
+		if Global.world == 4:
 			$WorldSelections/WSWorld4.show()
-		if world == 5:
+		if Global.world == 5:
 			$WorldSelections/WSWorld5.show()
-		if world == 6:
+		if Global.world == 6:
 			$WorldSelections/WSWorld6.show()
-		if world == 7:
+		if Global.world == 7:
 			$WorldSelections/WSWorld7.show()
 
 # Sets Highlight Image to show while the rest get hidden
