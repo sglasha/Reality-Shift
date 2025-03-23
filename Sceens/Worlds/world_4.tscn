@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=4 uid="uid://bd113t3pko0xb"]
+[gd_scene load_steps=17 format=4 uid="uid://bd113t3pko0xb"]
 
+[ext_resource type="Script" path="res://Reality-Shift/Scripts/fadeInOut.gd" id="1_hlsuf"]
 [ext_resource type="PackedScene" uid="uid://ci8k8x1kw315n" path="res://Reality-Shift/Sceens/player.tscn" id="1_ijht2"]
 [ext_resource type="Texture2D" uid="uid://cvjjlhixm0syp" path="res://Reality-Shift/Assets/world1/ForestTest.png" id="2_m1j26"]
 [ext_resource type="PackedScene" uid="uid://c1holq3gnq7ol" path="res://Reality-Shift/Sceens/kill_zone.tscn" id="3_qlgl6"]
@@ -80,6 +81,11 @@ size = Vector2(449.125, 58.75)
 size = Vector2(169, 7)
 
 [node name="World4" type="Node2D"]
+script = ExtResource("1_hlsuf")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_ijht2")]
 
@@ -153,3 +159,5 @@ shape = SubResource("RectangleShape2D_xeswj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="endZone"]
 position = Vector2(679, -837)
 shape = SubResource("RectangleShape2D_awl2w")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

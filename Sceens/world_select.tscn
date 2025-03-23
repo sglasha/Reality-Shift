@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c6ravuhhd14gy"]
+[gd_scene load_steps=19 format=3 uid="uid://c6ravuhhd14gy"]
 
 [ext_resource type="Script" path="res://Reality-Shift/Scripts/world_select.gd" id="1_0djiq"]
 [ext_resource type="Texture2D" uid="uid://dqm6x1kjd2tmq" path="res://Reality-Shift/Assets/WorldSelectionScreen/WSSBG.png" id="1_7yw2u"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://b7g22ft14khqk" path="res://Reality-Shift/Assets/WorldSelectionScreen/Worlds/WSSWorld6.png" id="8_6ck1j"]
 [ext_resource type="Texture2D" uid="uid://bytbr1nlsw7g0" path="res://Reality-Shift/Assets/WorldSelectionScreen/WorldGlow/WSSGlow7.png" id="8_pwe4v"]
 [ext_resource type="Texture2D" uid="uid://051bo1ke5xck" path="res://Reality-Shift/Assets/WorldSelectionScreen/Worlds/WSSWorld7.png" id="9_seia6"]
+[ext_resource type="AudioStream" uid="uid://8bbhlqox1oct" path="res://Reality-Shift/Audio/WorldSelect.wav" id="18_pq1tb"]
 
 [node name="WorldSelect" type="Node2D"]
 script = ExtResource("1_0djiq")
@@ -104,3 +105,7 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("9_seia6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="WorldSelectAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_pq1tb")
+autoplay = true

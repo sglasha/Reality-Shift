@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=4 uid="uid://du0c243rpkxxr"]
+[gd_scene load_steps=18 format=4 uid="uid://du0c243rpkxxr"]
 
 [ext_resource type="PackedScene" uid="uid://ci8k8x1kw315n" path="res://Reality-Shift/Sceens/player.tscn" id="1_hvnjp"]
 [ext_resource type="Texture2D" uid="uid://cvjjlhixm0syp" path="res://Reality-Shift/Assets/world1/ForestTest.png" id="2_t58al"]
 [ext_resource type="PackedScene" uid="uid://c1holq3gnq7ol" path="res://Reality-Shift/Sceens/kill_zone.tscn" id="3_wueox"]
 [ext_resource type="PackedScene" uid="uid://d2pic1i6b3or3" path="res://Reality-Shift/Sceens/end_zone.tscn" id="4_o2gsr"]
+[ext_resource type="PackedScene" uid="uid://c5sxii4cngnto" path="res://Reality-Shift/Sceens/flip_gravity.tscn" id="5_o0hao"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q78on"]
 texture = ExtResource("2_t58al")
@@ -79,6 +80,9 @@ size = Vector2(449.125, 58.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_awl2w"]
 size = Vector2(169, 7)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62vd8"]
+size = Vector2(1155, 337)
+
 [node name="World5" type="Node2D"]
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_hvnjp")]
@@ -153,3 +157,11 @@ shape = SubResource("RectangleShape2D_xeswj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="endZone"]
 position = Vector2(679, -837)
 shape = SubResource("RectangleShape2D_awl2w")
+
+[node name="flipGravity" parent="." instance=ExtResource("5_o0hao")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="flipGravity"]
+position = Vector2(5.5, -358.5)
+shape = SubResource("RectangleShape2D_62vd8")
+
+[connection signal="changeGrav" from="flipGravity" to="Player" method="_on_flip_gravity_change_grav"]
