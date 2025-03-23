@@ -44,19 +44,19 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("select"):
 		if Global.world == 1:
-			get_tree().change_scene_to_file("res://Reality-Shift/Sceens/world_1.tscn")
+			get_tree().change_scene_to_file("res://Reality-Shift/Sceens/Worlds/world_1.tscn")
 		if Global.world == 2:
-			get_tree().change_scene_to_file("res://Reality-Shift/Sceens/world_2.tscn")
+			get_tree().change_scene_to_file("res://Reality-Shift/Sceens/Worlds/world_2.tscn")
 		if Global.world == 3:
-			$WorldSelections/WSWorld3.show()
+			get_tree().change_scene_to_file("res://Reality-Shift/Sceens/Worlds/world_3.tscn")
 		if Global.world == 4:
-			$WorldSelections/WSWorld4.show()
+			get_tree().change_scene_to_file("res://Reality-Shift/Sceens/Worlds/world_4.tscn")
 		if Global.world == 5:
-			$WorldSelections/WSWorld5.show()
+			get_tree().change_scene_to_file("res://Reality-Shift/Sceens/Worlds/world_5.tscn")
 		if Global.world == 6:
-			$WorldSelections/WSWorld6.show()
+			get_tree().change_scene_to_file("res://Reality-Shift/Sceens/Worlds/world_6.tscn")
 		if Global.world == 7:
-			$WorldSelections/WSWorld7.show()
+			get_tree().change_scene_to_file("res://Reality-Shift/Sceens/Worlds/world_7.tscn")
 
 # Sets Highlight Image to show while the rest get hidden
 func setWorld(new :int):

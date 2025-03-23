@@ -22,11 +22,26 @@ func _physics_process(delta: float) -> void:
 		if wasOnFloor and !is_on_floor() || is_on_wall():
 			coyoteTime.start()
 	
+	elif swimming:
+		var horizontal_direction = Input.get_axis("left", "right")
+		if horizontal_direction != 0:
+			lastDirection = horizontal_direction
+		velocity.x = speed * horizontal_direction / 3
+		var vertical_direction = Input.get_axis("up", "down")
+		if vertical_direction != 0:
+			lastDirection = vertical_direction
+		velocity.y = speed * vertical_direction / 2
+		move_and_slide()
+		
+	
 	# Gravity Physics
-	if !is_on_floor():
+	if !is_on_floor() and player:
 		velocity.y += gravity * delta
 	if velocity.y > 1000:
 		velocity.y = 1000
+	if swimming:
+		velocity.y = speed / 4
+		move_and_slide()
 	
 	# Jump Physics
 	if Input.is_action_just_pressed("jump") and (is_on_floor() || !coyoteTime.is_stopped()) and player:
@@ -38,4 +53,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = 0
 		velocity.y -= jump
 		move_and_slide()
-		
+	
+func _on_water_change_state(state: bool) -> void:
+	swimming = state
+	player = !state
